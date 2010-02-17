@@ -6,4 +6,6 @@ Add any web-ready images to your theme directory at MYTHEME/images/mocks. These 
 
 ## Demo video
 
-As of Wednesday 1:30 p.m. Chicago time, this video is still being converted. http://vimeo.com/9529231
+<object width="572" height="358"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9529231&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=1&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=9529231&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=1&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="572" height="358"></embed></object>
+
+http://vimeo.com/9529231
