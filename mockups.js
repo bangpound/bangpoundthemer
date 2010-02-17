@@ -5,7 +5,8 @@ Drupal.behaviors.mockupOverlay = function (context) {
   $slider = $('<div id="mockup-slider"></div>').css({
     height: '100px',
     width: '10px',
-    position: 'fixed'
+    position: 'fixed',
+    top: '30px'
   });
   $('#block-bangpoundthemer-mockups .item-list a', context).click(
     function() {
