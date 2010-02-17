@@ -1,0 +1,4 @@
+name = "!&# Themer"
+description = "bangpound's theme developer tricks"
+core = 6.x
+dependencies[] = "jquery_ui"
