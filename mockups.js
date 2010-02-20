@@ -1,8 +1,6 @@
 /*globals Drupal,$ */
 
 Drupal.behaviors.mockupOverlay = function (context) {
-  var $slider;
-  $slider = $('<div id="mockup-slider"></div>');
   $('#block-bangpoundthemer-mockups .item-list a', context).click(
     function() {
       var $anchor, $image;
@@ -14,8 +12,11 @@ Drupal.behaviors.mockupOverlay = function (context) {
         .draggable({
           zIndex: 10000
         });
-      $slider
+      $('<div/>').css({
+          height: '100px'
+        })
         .prependTo('body')
+        .wrap('<div id="mockup-slider"/>')
         .slider({
           min: 0,
           max: 100,
