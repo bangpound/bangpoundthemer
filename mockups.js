@@ -2,26 +2,17 @@
 
 Drupal.behaviors.mockupOverlay = function (context) {
   var $slider;
-  $slider = $('<div id="mockup-slider"></div>').css({
-    height: '100px',
-    width: '10px',
-    position: 'fixed',
-    top: '30px'
-  });
+  $slider = $('<div id="mockup-slider"></div>');
   $('#block-bangpoundthemer-mockups .item-list a', context).click(
     function() {
       var $anchor, $image;
       $anchor = $(this);
       $image = $('<img/>')
+        .attr('id', 'mockup-overlay')
         .attr('src', $anchor.attr('href'))
         .appendTo('body')
         .draggable({
           zIndex: 10000
-        })
-        .css({
-          position: 'absolute',
-          top: 0,
-          left: 0
         });
       $slider
         .prependTo('body')

@@ -64,5 +64,6 @@ function bangpoundthemer_preprocess_block(&$vars, $hook) {
   if ($vars['block']->module == 'bangpoundthemer' && $vars['block']->delta == 'mockups') {
     jquery_ui_add(array('ui.draggable', 'ui.slider'));
     drupal_add_js(drupal_get_path('module', 'bangpoundthemer') .'/mockups.js');
+    drupal_add_css(drupal_get_path('module', 'bangpoundthemer') .'/bangpoundthemer.css');
   }
 }
