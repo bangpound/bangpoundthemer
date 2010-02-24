@@ -1,8 +1,10 @@
 /*globals Drupal,$ */
 
+"use strict";
+
 Drupal.behaviors.mockupOverlay = function (context) {
   $('#block-bangpoundthemer-mockups .item-list a', context).click(
-    function() {
+    function () {
       var $anchor, $image, $slider;
       $anchor = $(this);
       $image = $('<img/>')
@@ -21,7 +23,7 @@ Drupal.behaviors.mockupOverlay = function (context) {
           min: 0,
           max: 100,
           value: 60,
-          slide: function(event, ui) {
+          slide: function (event, ui) {
             $image.css('opacity', (100 - ui.value) / 100);
           }
         });
@@ -38,3 +40,5 @@ Drupal.behaviors.mockupOverlay = function (context) {
     }
   );
 };
+
+/*jslint white: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, strict: true, newcap: true, immed: true, indent: 2 */
