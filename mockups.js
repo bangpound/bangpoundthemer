@@ -12,6 +12,7 @@ Drupal.behaviors.mockupOverlay = function (context) {
         .attr('src', $anchor.attr('href'))
         .appendTo('body')
         .draggable({
+          opacity: 0.5,
           zIndex: 10000
         });
       $slider = $('<div/>').css({
