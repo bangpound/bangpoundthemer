@@ -35,6 +35,8 @@ Drupal.behaviors.mockupOverlay = function (context) {
         $image
           .draggable('destroy')
           .remove();
+        $(this)
+          .remove();
       })
       .appendTo($slider.parent());
       return false;
