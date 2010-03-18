@@ -30,6 +30,13 @@ function bangpoundthemer_block($op = 'list', $delta = 0, $edit = array()) {
           $block['content'] = theme('item_list', $items);
           return $block;
         case 'mockups':
+          // Admin 2.x module sidesteps core behavior for blocks.
+          // http://drupal.org/node/746432
+          if (module_exists('admin')) {
+            jquery_ui_add(array('ui.draggable', 'ui.slider'));
+            drupal_add_js(drupal_get_path('module', 'bangpoundthemer') .'/mockups.js');
+            drupal_add_css(drupal_get_path('module', 'bangpoundthemer') .'/bangpoundthemer.css');
+          }
           global $theme;
           $path = drupal_get_path('theme', $theme);
           if (user_access('access content')) {
