@@ -38,24 +38,18 @@ function bangpoundthemer_block($op = 'list', $delta = 0, $edit = array()) {
             drupal_add_css(drupal_get_path('module', 'bangpoundthemer') .'/bangpoundthemer.css');
           }
           global $theme;
-          $path = drupal_get_path('theme', $theme);
+          $themes = list_themes();
           if (user_access('access content')) {
-            $items = array();
-            $results = array();
-            $handler = opendir($path .'/images/mocks');
-
-            // keep going until all files in directory have been read
-            while ($file = readdir($handler)) {
-              if ($file != '.' && $file != '..') {
-                $results[] = $file;
+            if ($themes[$theme]->info['bangpoundthemer']['mockups']) {
+              $items = array();
+              $path = drupal_get_path('theme', $theme) .'/'. $themes[$theme]->info['bangpoundthemer']['mockups'];
+              $results = file_scan_directory($path, '(.*)\.(jpg|bmp|jpeg|png|gif)');
+              foreach ($results as $result) {
+                $items[] = l($result->name, $result->filename);
               }
+              $block['subject'] = t('Mockups');
+              $block['content'] = theme('item_list', $items);
             }
-            closedir($handler);
-            foreach ($results as $mockup) {
-              $items[] = l($mockup, $path .'/images/mocks/'. $mockup);
-            }
-            $block['subject'] = t('Mockups');
-            $block['content'] = theme('item_list', $items);
             return $block;
           }
         default:
